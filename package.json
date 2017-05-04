@@ -1,0 +1,56 @@
+{
+  "name": "file-template-yx",
+  "displayName": "file_template_yx",
+  "description": "create file template include react angular",
+  "version": "0.0.1",
+  "icon": "images/icon.png",
+  "publisher": "file-template-yx",
+  "author": {
+    "name": "wangjunjun"
+  },
+  "engines": {
+    "vscode": "^1.10.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "*"
+  ],
+  "main": "./extension",
+  "contributes": {
+    "commands": [
+      {
+        "command": "file.react",
+        "title": "create react file"
+      },
+      {
+        "command": "file.angular",
+        "title": "create angular file"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "file.angular",
+        "key": "ctrl+shift+a"
+      }
+    ]
+  },
+  "scripts": {
+    "postinstall": "node ./node_modules/vscode/bin/install",
+    "test": "node ./node_modules/vscode/bin/test"
+  },
+  "devDependencies": {
+    "@types/mocha": "^2.2.32",
+    "@types/node": "^6.0.40",
+    "cheerio": "^0.22.0",
+    "eslint": "^3.6.0",
+    "mocha": "^2.3.3",
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Microsoft/vscode-chrome-debug"
+  }
+}
