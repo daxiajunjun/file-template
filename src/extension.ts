@@ -1,5 +1,5 @@
 var vscode = require('vscode');
-var createFile = require('./src/index');
+var createFile = require('./index');
 function activate(context) {
   var vs = vscode;
   var disposableReact = vs.commands.registerCommand('file.react', function () {

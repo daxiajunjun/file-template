@@ -2,7 +2,7 @@
   "name": "file-template-yx",
   "displayName": "file_template_yx",
   "description": "create file template include react angular",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "icon": "images/icon.png",
   "publisher": "wangjunjun",
   "author": {
@@ -17,7 +17,7 @@
   "activationEvents": [
     "*"
   ],
-  "main": "./extension",
+  "main": "./out/src/extension",
   "contributes": {
     "commands": [
       {
@@ -34,19 +34,33 @@
         "command": "file.angular",
         "key": "ctrl+shift+a"
       }
-    ]
+    ],
+     "configuration": {
+            "properties": {
+                "yx.name": {
+                  "type": "string",
+                  "description": "注释中的用户名"
+                }
+            }
+     }
   },
   "scripts": {
+    "vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -watch -p ./",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "test": "node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "@types/mocha": "^2.2.32",
+    "cheerio": "^0.22.0",
+    "typescript": "^2.0.3",
+    "vscode": "^1.0.0",
+    "mocha": "^2.3.3",
+    "@types/node": "^6.0.40",
+    "@types/mocha": "^2.2.32"
+  },
+   "dependencies": {
     "@types/node": "^6.0.40",
     "cheerio": "^0.22.0",
-    "eslint": "^3.6.0",
-    "mocha": "^2.3.3",
-    "typescript": "^2.0.3",
     "vscode": "^1.0.0"
   },
   "repository": {
