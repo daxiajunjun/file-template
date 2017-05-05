@@ -4,7 +4,7 @@
   "description": "create file template include react angular",
   "version": "0.0.1",
   "icon": "images/icon.png",
-  "publisher": "file-template-yx",
+  "publisher": "wangjunjun",
   "author": {
     "name": "wangjunjun"
   },
@@ -51,6 +51,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Microsoft/vscode-chrome-debug"
+    "url": "https://github.com/daxiajunjun/file-template"
   }
 }
