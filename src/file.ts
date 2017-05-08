@@ -22,8 +22,8 @@
   * @memberOf CreateNG
   */
  function createDir(dirPath) {
-   if (dirPath.split('\\').length > 1) {
-     createDir(dirPath.substr(0, dirPath.lastIndexOf('\\')));
+   if (dirPath.split('\/').length > 1 && dirPath.lastIndexOf('/') != 0) {
+     createDir(dirPath.substr(0, dirPath.lastIndexOf('\/')));
    }
    return mkdir(dirPath);
  }

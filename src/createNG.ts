@@ -1,4 +1,4 @@
-var cheerio = require('cheerio');
+import cheerio = require('cheerio');
 var fs = require('fs');
 var path = require('path');
 var vscode = require('vscode');
@@ -18,7 +18,7 @@ var config = require('./config').angularConfig;
  *
  * @memberOf CreateNG
  */
-function createNG(type, filepath) {
+export function createNG(type, filepath) {
   let filename = filepath.match(/[^/\\\\]+$/)[0]; // 获取文件名称
 
   // 获取创建文件的目录地址
@@ -34,7 +34,7 @@ function createNG(type, filepath) {
     let fileSuffix = (type === 'html' ? config.HTML_FILE_SUFFIX : config.JS_FILE_SUFFIX);
     let fileNameHasSuffix = `${filename}${fileType.suffix}${fileSuffix}`;
     filepath = path.resolve(dirPath, fileNameHasSuffix); // 文件的完整地址
-    initContent = getFileContent(type); // 活动初始化内容
+    initContent = getFileContent(type,filename); // 活动初始化内容
     createNGFile(dirPath, filepath, initContent);
   } else {
     createNG('ctrl', filepath);
@@ -64,7 +64,8 @@ function createNGFile(dirPath, filepath, initContent) {
  * @memberOf CreateNG
  */
 function appendToIndexFile(jsfiles) {
-  var $ = cheerio.load(fs.readFileSync(config.INDEX_FILE_PATH), {
+  var str = fs.readFileSync(config.INDEX_FILE_PATH, 'utf8');
+  var $ = cheerio.load(fs.readFileSync(config.INDEX_FILE_PATH, 'utf8'), {
     decodeEntities: false
   });
   var body = $('body');
@@ -105,6 +106,4 @@ function getFileContent(type, name) {
       return '';
   }
 }
-module.exports = {
-  createNG: createNG
-};
+

@@ -2,7 +2,7 @@
   "name": "file-template-yx",
   "displayName": "file_template_yx",
   "description": "create file template include react angular",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "icon": "images/icon.png",
   "publisher": "wangjunjun",
   "author": {
@@ -21,28 +21,32 @@
   "contributes": {
     "commands": [
       {
-        "command": "file.react",
+        "command": "extension.react",
         "title": "create react file"
       },
       {
-        "command": "file.angular",
+        "command": "extension.angular",
         "title": "create angular file"
       }
     ],
     "keybindings": [
       {
-        "command": "file.angular",
+        "command": "extension.react",
+        "key": "ctrl+shift+r"
+      },
+      {
+        "command": "extension.angular",
         "key": "ctrl+shift+a"
       }
     ],
-     "configuration": {
-            "properties": {
-                "yx.name": {
-                  "type": "string",
-                  "description": "注释中的用户名"
-                }
-            }
-     }
+    "configuration": {
+      "properties": {
+        "yx.name": {
+          "type": "string",
+          "description": "注释中的用户名"
+        }
+      }
+    }
   },
   "scripts": {
     "vscode:prepublish": "tsc -p ./",
@@ -51,14 +55,14 @@
     "test": "node ./node_modules/vscode/bin/test"
   },
   "devDependencies": {
-    "cheerio": "^0.22.0",
     "typescript": "^2.0.3",
     "vscode": "^1.0.0",
     "mocha": "^2.3.3",
     "@types/node": "^6.0.40",
     "@types/mocha": "^2.2.32"
   },
-   "dependencies": {
+  "dependencies": {
+    "@types/cheerio": "^0.22.1",
     "@types/node": "^6.0.40",
     "cheerio": "^0.22.0",
     "vscode": "^1.0.0"
